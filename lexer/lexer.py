@@ -43,7 +43,7 @@ elif word == ">=":
     tokens.append(Token(TokenType.GREATER_EQUAL, word))
 elif word == "<=":
     tokens.append(Token(TokenType.LESS_EQUAL, word))
-            elif word.startswith('"') and word.endswith('"'):
+elif word.startswith('"') and word.endswith('"'):
                 tokens.append(Token(TokenType.STRING, word[1:-1]))
             elif word.isdigit():
                 tokens.append(Token(TokenType.INTEGER, word))
