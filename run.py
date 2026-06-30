@@ -13,7 +13,6 @@ def main():
     with open("examples/hello.rex", "r") as file:
         code = file.read()
 
-    # Lexer
     lexer = Lexer(code)
     tokens = lexer.tokenize()
 
@@ -21,20 +20,16 @@ def main():
     for token in tokens:
         print(token)
 
-    # Parser
     parser = Parser(tokens)
     program = parser.parse()
 
     print("\n=== AST ===")
     print(program)
 
-    # Interpreter
+    print("\n=== OUTPUT ===")
     interpreter = Interpreter()
-    interpreter.execute(program)
-
-    print("\n=== VARIABLES ===")
-    print(interpreter.variables)
+    interpreter.interpret(program)
 
 
 if __name__ == "__main__":
-    main() 
+    main()
