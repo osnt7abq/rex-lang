@@ -4,9 +4,9 @@ Lexer
 Version: 0.1 "Hatchling"
 """
 
-from keywords import KEYWORDS
-from token import Token
-from token_types import TokenType
+from lexer.keywords import KEYWORDS
+from lexer.token import Token
+from lexer.token_types import TokenType
 
 
 class Lexer:
@@ -55,33 +55,6 @@ class Lexer:
 
             elif word == "<=":
                 tokens.append(Token(TokenType.LESS_EQUAL, word))
-
-            elif word == "(":
-                tokens.append(Token(TokenType.LPAREN, word))
-
-            elif word == ")":
-                tokens.append(Token(TokenType.RPAREN, word))
-
-            elif word == "{":
-                tokens.append(Token(TokenType.LBRACE, word))
-
-            elif word == "}":
-                tokens.append(Token(TokenType.RBRACE, word))
-
-            elif word == "[":
-                tokens.append(Token(TokenType.LBRACKET, word))
-
-            elif word == "]":
-                tokens.append(Token(TokenType.RBRACKET, word))
-
-            elif word == ",":
-                tokens.append(Token(TokenType.COMMA, word))
-
-            elif word == ".":
-                tokens.append(Token(TokenType.DOT, word))
-
-            elif word == ":":
-                tokens.append(Token(TokenType.COLON, word))
 
             elif word.startswith('"') and word.endswith('"'):
                 tokens.append(Token(TokenType.STRING, word[1:-1]))
