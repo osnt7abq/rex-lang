@@ -58,6 +58,9 @@ class Parser:
             if token.value == "let":
                 return self.parse_variable_declaration()
 
+            elif token.value == "print":
+                return self.parse_print()
+
         return None
 
     def parse_variable_declaration(self):
@@ -79,3 +82,19 @@ class Parser:
         self.advance()
 
         return VariableDeclaration(name.value, value)
+
+    def parse_print(self):
+        self.advance()  # Skip 'print'
+
+        value = self.current()
+
+        if value.type == TokenType.STRING:
+            node = StringLiteral(value.value)
+        elif value.type == TokenType.INTEGER:
+            node = IntegerLiteral(value.value)
+        else:
+            node = Identifier(value.value)
+
+        self.advance()
+
+        return PrintStatement(node)
