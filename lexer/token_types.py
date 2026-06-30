@@ -22,6 +22,7 @@ class TokenType:
     MINUS = "-"
     MULTIPLY = "*"
     DIVIDE = "/"
+    MODULO = "%"
 
     # Comparison
     EQUAL = "=="
