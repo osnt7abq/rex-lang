@@ -11,6 +11,7 @@ from parser.ast import (
     IntegerLiteral,
     StringLiteral,
     Identifier,
+    PrintStatement,
 )
 
 
