@@ -14,18 +14,18 @@ class Lexer:
         self.words = source.split()
 
     def tokenize(self):
-    tokens = []
+        tokens = []
 
-    for word in self.words:
-        if word in KEYWORDS:
-            tokens.append(Token(TokenType.KEYWORD, word))
-        elif word == "=":
-            tokens.append(Token(TokenType.ASSIGN, word))
-        elif word.startswith('"') and word.endswith('"'):
-    tokens.append(Token(TokenType.STRING, word[1:-1]))
-elif word.isdigit():
-    tokens.append(Token(TokenType.INTEGER, word))
-        else:
-            tokens.append(Token(TokenType.IDENTIFIER, word))
+        for word in self.words:
+            if word in KEYWORDS:
+                tokens.append(Token(TokenType.KEYWORD, word))
+            elif word == "=":
+                tokens.append(Token(TokenType.ASSIGN, word))
+            elif word.startswith('"') and word.endswith('"'):
+                tokens.append(Token(TokenType.STRING, word[1:-1]))
+            elif word.isdigit():
+                tokens.append(Token(TokenType.INTEGER, word))
+            else:
+                tokens.append(Token(TokenType.IDENTIFIER, word))
 
-    return tokens
+        return tokens
