@@ -29,3 +29,10 @@ class StringLiteral:
 class Identifier:
     def __init__(self, name):
         self.name = name
+
+class PrintStatement:
+    def __init__(self, value):
+        self.value = value
+
+    def __repr__(self):
+        return f"PrintStatement({self.value})"
