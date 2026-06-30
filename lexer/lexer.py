@@ -21,16 +21,7 @@ class Lexer:
                 tokens.append(Token(TokenType.KEYWORD, word))
             elif word == "=":
                 tokens.append(Token(TokenType.ASSIGN, word))
-elif word == "+":
-    tokens.append(Token(TokenType.PLUS, word))
-elif word == "-":
-    tokens.append(Token(TokenType.MINUS, word))
-elif word == "*":
-    tokens.append(Token(TokenType.MULTIPLY, word))
-elif word == "/":
-    tokens.append(Token(TokenType.DIVIDE, word))
-elif word == "%":
-    tokens.append(Token(TokenType.MODULO, word))
+
             elif word.startswith('"') and word.endswith('"'):
                 tokens.append(Token(TokenType.STRING, word[1:-1]))
             elif word.isdigit():
