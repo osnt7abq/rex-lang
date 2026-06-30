@@ -22,6 +22,12 @@ def main():
     parser = Parser(tokens)
     program = parser.parse()
 
+interpreter = Interpreter()
+interpreter.execute(program)
+
+print("\n=== VARIABLES ===")
+print(interpreter.variables)
+
     print("\n=== AST ===")
     print(program)
 
