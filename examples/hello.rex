@@ -1,2 +1,1 @@
-let name = "Osant"
-print name
+print "Hello, Rex!"
