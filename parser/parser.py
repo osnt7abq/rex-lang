@@ -4,8 +4,14 @@ Parser
 Version: 0.1 "Hatchling"
 """
 
-from token_types import TokenType
-from ast import Program, VariableDeclaration, IntegerLiteral, StringLiteral, Identifier
+from lexer.token_types import TokenType
+from parser.ast import (
+    Program,
+    VariableDeclaration,
+    IntegerLiteral,
+    StringLiteral,
+    Identifier,
+)
 
 
 class Parser:
