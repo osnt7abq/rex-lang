@@ -9,7 +9,8 @@ from parser.parser import Parser
 
 
 def main():
-    code = 'let name = "Osant"'
+    with open("examples/hello.rex", "r") as file:
+        code = file.read()
 
     lexer = Lexer(code)
     tokens = lexer.tokenize()
@@ -19,10 +20,10 @@ def main():
         print(token)
 
     parser = Parser(tokens)
-    ast = parser.parse()
+    program = parser.parse()
 
     print("\n=== AST ===")
-    print(ast)
+    print(program)
 
 
 if __name__ == "__main__":
