@@ -6,7 +6,7 @@ Version: 0.1 "Hatchling"
 
 from lexer.keywords import KEYWORDS
 from lexer.token import Token
-from lexer.token_types import TokenType
+from lexer.token_types import TokenType 
 
 
 class Lexer:
