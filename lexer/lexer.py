@@ -21,8 +21,10 @@ class Lexer:
             tokens.append(Token(TokenType.KEYWORD, word))
         elif word == "=":
             tokens.append(Token(TokenType.ASSIGN, word))
-        elif word.isdigit():
-            tokens.append(Token(TokenType.INTEGER, word))
+        elif word.startswith('"') and word.endswith('"'):
+    tokens.append(Token(TokenType.STRING, word[1:-1]))
+elif word.isdigit():
+    tokens.append(Token(TokenType.INTEGER, word))
         else:
             tokens.append(Token(TokenType.IDENTIFIER, word))
 
